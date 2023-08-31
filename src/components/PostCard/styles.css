@@ -1,0 +1,16 @@
+.post {
+ border-radius: 12px;
+ background: #fff;
+ transition: transform 100ms ease-in-out;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.post:hover {
+ transform: scale(1.04);
+}
+.post img {
+ max-width: 100%;
+ border-radius: 12px;
+}
+.post-content {
+ padding: 30px;
+}
