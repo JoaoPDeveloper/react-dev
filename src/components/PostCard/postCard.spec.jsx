@@ -1,25 +1,24 @@
-/* eslint-disable testing-library/no-node-access */
-import { render, screen } from "@testing-library/react";
-import { PostCard } from ".";
-import { postCardPropsMock } from "./mock";
+import { render, screen } from '@testing-library/react';
+import { PostCard } from '.';
+import { postCardPropsMock } from './mock';
 
 const props = postCardPropsMock;
 
-describe("<PostCard />", () => {
-  it("should render PostCard correctly", () => {
+describe('<PostCard />', () => {
+  it('should render PostCard correctly', () => {
     render(<PostCard {...props} />);
 
-    expect(screen.getByRole("img", { name: /title 1/i })).toHaveAttribute(
-      "src",
-      "img/img.png"
+    expect(screen.getByRole('img', { name: /title 1/i })).toHaveAttribute(
+      'src',
+      'img/img.png',
     );
     expect(
-      screen.getByRole("heading", { name: /title 1/i })
+      screen.getByRole('heading', { name: /title 1/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText("body 1")).toBeInTheDocument();
+    expect(screen.getByText('body 1')).toBeInTheDocument();
   });
- it('should match snapShot',() =>{
-  const { container } = render(<PostCard {...props} />)
-  expect(container.firstChild).toMatchSnapshot()
- })
+  it('should match snapShot', () => {
+    const { container } = render(<PostCard {...props} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
