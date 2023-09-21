@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './styles/global-styles.css';
 
 import { Home } from './templates/Home';
 
-// eslint-disable-next-line react/no-deprecated
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <Home />
   </React.StrictMode>,
